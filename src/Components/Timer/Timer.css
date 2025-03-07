@@ -1,0 +1,91 @@
+.timer-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 2rem;
+}
+
+.timer-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timer-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.timer-text {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.timer-progress {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg);
+}
+
+.timer-progress circle {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 364;
+  transition: stroke-dashoffset 1s linear;
+}
+
+.timer-normal {
+  color: #4CAF50;
+}
+
+.timer-normal + svg circle {
+  stroke: #4CAF50;
+}
+
+.timer-warning {
+  color: #FFA000;
+}
+
+.timer-warning + svg circle {
+  stroke: #FFA000;
+}
+
+.timer-danger {
+  color: #f44336;
+  animation: pulse 1s infinite;
+}
+
+.timer-danger + svg circle {
+  stroke: #f44336;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .timer-container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .timer-progress {
+    width: 100px;
+    height: 100px;
+  }
+
+  .timer-value {
+    font-size: 2rem;
+  }
+} 
